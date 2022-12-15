@@ -1,0 +1,33 @@
+footer {
+    padding: 3rem 0;
+    font-size: 0.9rem;
+    margin-top: 7rem;
+}
+
+footer a {
+    color: lightgoldenrodyellow;
+    text-shadow: #FC0 1px 0 10px;
+}
+
+.footer__logo {
+    font-size: 1.8rem;
+    margin-bottom: 0.9rem;
+    display: inline-block;
+}
+
+.footer__copyright {
+    color: white;
+    /* margin-bottom: 4rem; */
+}
+
+/* ========== MEDIA QUERIES (SMALL DEVICES) ========== */
+@media screen and (max-width: 600px) {
+    .permalinks {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .footer__socials {
+        margin-bottom: 2.6rem;
+    }
+}
