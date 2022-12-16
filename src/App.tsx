@@ -1,29 +1,26 @@
+import { observer } from 'mobx-react-lite';
 import React from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
+
 import './App.css';
 import './Buttons.css';
-import { Footer } from './features/footer/Footer';
-import { Login } from './features/login/Login';
-import { TodoList } from "./features/TodoList";
-import { TodoNew } from "./features/TodoNew";
+
 import { isAuthorized } from './stores/login';
+import { Login } from './pages/Login';
+import { Dashboard } from './pages/Dashboard';
+import { Logout } from './pages/Logout';
 
-// @ts-ignore
-const PrivateRoute: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-    console.log('isAuthorized: ', isAuthorized)
+type ProtectedRouteProps = { children: React.ReactElement };
 
-    if (!isAuthorized) {
-        return <Navigate to="/login" replace />;
-    }
+const ProtectedRoute = observer(({ children }: ProtectedRouteProps) => {
 
-    return children;
-}
+    return isAuthorized.get() ? children : <Navigate to="/login" />;
+})
 
 const App = () => {
     return (
         <div className="App">
             <Routes>
-
                 <Route
                     element={<Login />}
                     path="/login"
@@ -31,14 +28,18 @@ const App = () => {
 
                 <Route
                     element={
-                        <PrivateRoute>
-                            <h1 className='title'>ToDo List:</h1>
-                            <TodoNew />
-                            <TodoList />
-                            <Footer />
-                        </PrivateRoute>
+                        <ProtectedRoute>
+                            <Dashboard />
+                        </ProtectedRoute>
                     }
                     path="/dashboard"
+                />
+
+                <Route
+                    element={
+                        <Logout />
+                    }
+                    path="/logout"
                 />
 
                 <Route path='*' element={<Navigate to="/login" replace={true} />} />

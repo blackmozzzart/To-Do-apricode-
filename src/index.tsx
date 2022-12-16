@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import { StoreProvider } from "./helpers/store-provider";
@@ -8,10 +8,7 @@ import { BrowserRouter } from 'react-router-dom';
 
 const todoList = new TodoList([]);
 
-//@ts-ignore - for debugging
-window.todoList = todoList
-
-ReactDOM.render(
+ReactDOM.createRoot(document.getElementById('root')!).render(
     <StoreProvider value={todoList}>
         <BrowserRouter>
             <div className='a'>
@@ -19,4 +16,4 @@ ReactDOM.render(
             </div>
         </BrowserRouter>
     </StoreProvider>
-    , document.getElementById('root'));
+)

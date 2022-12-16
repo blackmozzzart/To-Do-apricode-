@@ -1,15 +1,11 @@
-import React, { useCallback, useEffect } from 'react';
+import React, { useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { loginStore, User } from '../../stores/login';
 import { observer } from 'mobx-react-lite';
 
 
-export const Login = observer(() => {
+export const AuthForm = observer(() => {
     const navigate = useNavigate()
-
-    useEffect(() => {
-        console.log(loginStore.user)
-    }, [loginStore.user])
 
     const handleSubmit = useCallback((event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
@@ -19,8 +15,6 @@ export const Login = observer(() => {
             login: formData.get('login') as string,
             password: formData.get('password') as string
         };
-
-
 
         fetch('http://localhost:3010/api/login', {
             method: 'POST',
