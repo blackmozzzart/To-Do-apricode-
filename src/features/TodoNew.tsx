@@ -8,7 +8,11 @@ export const TodoNew = () => {
     const todoList = useStore();
 
     const addTodo = () => {
-        todoList.addTodo(newTodo);
+        todoList.addTodo({
+            id: Date.now(),
+            text: newTodo,
+            isDone: false
+        });
         setTodo('');
     };
 
