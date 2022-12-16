@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { loginStore, User } from '../../stores/login';
-import {observer} from 'mobx-react-lite';
+import { observer } from 'mobx-react-lite';
 
 
 export const Login = observer(() => {
@@ -20,7 +20,7 @@ export const Login = observer(() => {
             password: formData.get('password') as string
         };
 
-        
+
 
         fetch('http://localhost:3010/api/login', {
             method: 'POST',

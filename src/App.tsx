@@ -1,6 +1,7 @@
 import React from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import './App.css';
+import './Buttons.css';
 import { Footer } from './features/footer/Footer';
 import { Login } from './features/login/Login';
 import { TodoList } from "./features/TodoList";
@@ -10,7 +11,7 @@ import { isAuthorized } from './stores/login';
 // @ts-ignore
 const PrivateRoute: React.FC<{ children: React.ReactNode }> = ({ children }) => {
     console.log('isAuthorized: ', isAuthorized)
-    
+
     if (!isAuthorized) {
         return <Navigate to="/login" replace />;
     }

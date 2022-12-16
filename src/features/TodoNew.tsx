@@ -13,11 +13,13 @@ export const TodoNew = () => {
     };
 
     return (
-        <Popup className='todo-popup' trigger={<button>Add todo</button>} position='bottom center'>
-            <div className="todo-new">
-                <input type="text" value={newTodo} onKeyDown={onEnterPress(addTodo)} onChange={(e) => setTodo(e.target.value)} />
-                <button className='button' onClick={addTodo}>Save</button>
-            </div>
-        </Popup>
+        <div className='container'>
+            <Popup className='todo-popup' trigger={<button className='btn'><a href='#'>Add todo</a></button>} position='bottom center'>
+                <div className="todo-new">
+                    <input type="text" value={newTodo} onKeyDown={onEnterPress(addTodo)} onChange={(e) => setTodo(e.target.value)} />
+                    <button className='button' onClick={addTodo}>Save</button>
+                </div>
+            </Popup>
+        </div>
     )
 };

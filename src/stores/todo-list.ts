@@ -1,4 +1,4 @@
-import {action, computed, makeObservable, observable} from "mobx";
+import { action, computed, makeObservable, observable } from "mobx";
 import TodoItem from "./todo-item";
 
 export class TodoList {
@@ -24,6 +24,18 @@ export class TodoList {
     //     this.list.filter()
     // }
 
+    // @action
+    // get finishedTodos(): TodoItem[] {
+    //     return this.list.filter(todo => todo.isDone)
+    // }
+    // constructor(list) {
+    //     makeObservable(this, {
+    //         list: observable,
+    //         finishedTodos: computed
+    //     })
+    //     this.list = list
+    // }
+
     @computed
     get finishedTodos(): TodoItem[] {
         return this.list.filter(todo => todo.isDone);
@@ -33,4 +45,9 @@ export class TodoList {
     get openTodos(): TodoItem[] {
         return this.list.filter(todo => !todo.isDone);
     }
+
+    //     @computed
+    //     get unfinishedTodoCount(): TodoItem[] {
+    //         return this.list.filter(todo => !todo.isDone)
+    //     }
 }
