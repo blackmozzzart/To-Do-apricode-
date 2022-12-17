@@ -11,9 +11,8 @@ const todoList = new TodoList([]);
 ReactDOM.createRoot(document.getElementById('root')!).render(
     <StoreProvider value={todoList}>
         <BrowserRouter>
-            <div className='a'>
-                <App />
-            </div>
+            <div className='a' />
+            <App />
         </BrowserRouter>
     </StoreProvider>
 )

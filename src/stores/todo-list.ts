@@ -24,8 +24,8 @@ export class TodoList {
     }
 
     @action
-    removeTodo = (todo: ITodoItem) => {
-        // this.list.splice(this.list.indexOf(todo), 1);
+    removeTodo = (id: ITodoItem['id']) => {
+        this.list.splice(this.list.findIndex((todo) => todo.id === id), 1);
     };
 
     @computed

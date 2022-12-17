@@ -3,7 +3,7 @@ import React from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
 
 import './App.css';
-import './Buttons.css';
+import './common.css';
 
 import { isAuthorized } from './stores/login';
 import { Login } from './pages/Login';

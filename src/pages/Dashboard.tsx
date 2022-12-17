@@ -9,18 +9,21 @@ import { TodoList } from "../features/TodoList";
 export const Dashboard = () => {
 
     return (
-        <div>
+        <div className="container">
             <h1 className='title'>ToDo List:</h1>
-
             <TodoNew />
 
             <TodoList />
 
-            <Footer />
+            <div className='btn-wrapper'>
+                <div className="btn">
+                    <NavLink to="/logout">
+                        <span>Log Out</span>
+                    </NavLink>
+                </div>
+            </div>
 
-            <NavLink to="/logout">
-                <button>exit</button>
-            </NavLink>
+            <Footer />
         </div>
     );
 };

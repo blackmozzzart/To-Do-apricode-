@@ -1,15 +1,19 @@
 .container {
-    width: 800px;
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: space-around;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
-.container .btn {
+.btn-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.btn {
     position: relative;
     top: 0;
     left: 0;
-    width: 50%;
+    max-width: 50%;
+    width: 100%;
     height: 20px;
     margin: 20px;
     display: flex;
@@ -17,7 +21,7 @@
     align-items: center;
 }
 
-.container .btn a {
+.btn a {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -41,7 +45,7 @@
     backdrop-filter: blur(15px);
 }
 
-.container .btn:hover a {
+.btn:hover a {
     transition: 4s;
     letter-spacing: 8px;
     box-shadow: 0 0 5px #2db2ff, 0 0 15px #2db2ff, 0 0 30px #2db2ff,
@@ -51,7 +55,7 @@
         transition: 0.1s;
 }
 
-.container .btn a::before {
+.btn a::before {
     content: "";
     position: absolute;
     top: 0;
@@ -64,11 +68,11 @@
     filter: blur(0px);
 }
 
-.container .btn:hover a::before {
+.btn:hover a::before {
     transform: skewX(45deg) translate(200px);
 }
 
-.container .btn::before {
+.btn::before {
     content: "";
     position: absolute;
     left: 50%;
@@ -81,7 +85,7 @@
     transition-delay: 0.5;
 }
 
-.container .btn:hover::before
+.btn:hover::before
 
 /*lightup button*/
     {
@@ -91,7 +95,7 @@
     border-radius: 30px;
 }
 
-.container .btn::after {
+.btn::after {
     content: "";
     position: absolute;
     left: 50%;
@@ -104,7 +108,7 @@
     transition-delay: 0.5;
 }
 
-.container .btn:hover::after
+.btn:hover::after
 
 /*lightup button*/
     {
@@ -114,34 +118,22 @@
     border-radius: 30px;
 }
 
-.container .btn:nth-child(1)::before,
+.btn:nth-child(1)::before,
 /*chnage 1*/
-.container .btn:nth-child(1)::after {
+.btn:nth-child(1)::after {
     background: #2db2ff;
     box-shadow: 0 0 5px #2db2ff, 0 0 15px #2db2ff, 0 0 30px #2db2ff,
         0 0 60px #2db2ff;
 }
 
-
 /* ========== TODOS (OPEN) ========== */
-.open-todos {
+.paper {
     position: relative;
-    top: 0;
-    left: 0;
-    width: 250px;
-    height: 50px;
     margin: 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
-
-.open-todos {
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -159,55 +151,16 @@
     z-index: 1;
     transition: 0.5s;
     backdrop-filter: blur(15px);
+    box-sizing: border-box;
 }
 
-.open-todos:hover {
+.paper:hover {
     transition: 1s;
     box-shadow: 0 0 5px #ff1f71, 0 0 15px #ff1f71, 0 0 30px #ff1f71,
         0 0 60px #ff1f71;
 }
 
-
-/* ========== TODOS (FINISHED) ========== */
-
-.finished-todos {
-    position: relative;
-    top: 0;
-    left: 0;
-    width: 250px;
-    height: 50px;
-    margin: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.finished-todos {
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: rgba(255, 255, 255, 0.05);
-    box-shadow: 0 15px 15px rgba(0, 0, 0, 0.3);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 30px;
-    padding: 10px;
-    letter-spacing: 1px;
-    text-decoration: none;
-    overflow: hidden;
-    color: #fff;
-    font-weight: 400px;
-    z-index: 1;
-    transition: 0.5s;
-    backdrop-filter: blur(15px);
-}
-
-.finished-todos:hover {
+.paper_green:hover {
     transition: 1s;
     box-shadow: 0 0 5px #1eff45, 0 0 15px #1eff45, 0 0 30px #1eff45,
         0 0 60px #1eff45;
